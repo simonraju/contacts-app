@@ -59,7 +59,12 @@ Future<void> pickImage() async {
 
 void _save() {
   if (_formKey.currentState!.validate() && _contact != null) {
-  final updated = _contact!.copyWith(name: _nameCtrl.text.trim(), phone: _phoneCtrl.text.trim(), email: _emailCtrl.text.trim().isEmpty ? null : _emailCtrl.text.trim(), imagePath:_imageFile!.path.isEmpty ? null : _imageFile?.path );
+  final updated = _contact!.copyWith(
+    name: _nameCtrl.text.trim(),
+     phone: _phoneCtrl.text.trim(),
+      email: _emailCtrl.text.trim().isEmpty ? null : _emailCtrl.text.trim(),
+       imagePath:_imageFile!.path.isEmpty ? null : _imageFile?.path
+     );
   _service.updateContact(updated);
   Navigator.pop(context);
   }
@@ -67,8 +72,9 @@ void _save() {
   @override
   Widget build(BuildContext context) {
     if (_contact == null) {
-return Scaffold(appBar: AppBar(title: const Text('Edit')), body: const Center(child: Text('Contact not found')));
-}
+        return Scaffold(appBar: AppBar(title: const Text('Edit')),
+        body: const Center(child: Text('Contact not found')));
+        }
 
 
       return Scaffold(
@@ -85,7 +91,7 @@ return Scaffold(appBar: AppBar(title: const Text('Edit')), body: const Center(ch
               backgroundColor: Colors.white,
               radius: 60,
               backgroundImage: _imageFile != null ? FileImage(_imageFile!) : null,
-              child: _imageFile == null ? const Icon(Icons.person, size: 60) : null,
+              child: _imageFile == null ? const Icon(Icons.person, size: 60, color: Colors.grey) : null,
             ),
              ),
             ElevatedButton(

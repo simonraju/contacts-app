@@ -58,7 +58,7 @@ void _save() {
              child: CircleAvatar( radius: 60,
                 backgroundColor: Colors.white,
               backgroundImage: _imageFile != null ? FileImage(_imageFile!) : null,
-              child: _imageFile == null ? Icon(Icons.person, size: 60) : null,
+              child: _imageFile == null ? Icon(Icons.person, size: 60, color: Colors.grey,) : null,
             ),
             ),
               ElevatedButton(

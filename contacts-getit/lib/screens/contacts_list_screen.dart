@@ -78,9 +78,7 @@ void _onChange() => setState(() {});
                   return false;
                 } else if (direction == DismissDirection.startToEnd) {
                     _confirmDelete(context, contact);
-                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Contact ${contact.name} is Deleted')),
-                  );
+                    
                   // Delete
 
                 }
@@ -113,7 +111,7 @@ void _onChange() => setState(() {});
                         child: CircleAvatar(
                          backgroundColor: Color.fromARGB(255, 255, 255, 255),
                           radius: 25,
-                          child: Icon(Icons.person),
+                          child: Icon(Icons.person, color: Colors.grey),
                         )
                         ),
                 title: Text(contact.name),
@@ -151,6 +149,9 @@ void _onChange() => setState(() {});
       );
       if (yes == true) {
       _service.deleteContact(c.id);
+       ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Contact ${c.name} is Deleted')),
+        );
       }
 }
 }

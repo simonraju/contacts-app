@@ -40,7 +40,8 @@ void _onChange() => setState(() {});
   Widget build(BuildContext context) {
     final contact = _service.getById(widget.contactId);
   if (contact == null) {
-  return Scaffold(appBar: AppBar(title: const Text('Contact')), body: const Center(child: Text('Contact not found')));
+  return Scaffold(appBar: AppBar(title: const Text('Contact')),
+   body: const Center(child: Text('Contact not found')));
   }
       return Scaffold(
       appBar: AppBar(
@@ -53,7 +54,7 @@ void _onChange() => setState(() {});
                       children: [
                          CircleAvatar(
                radius: 64,
-              backgroundColor: Color.fromARGB(255, 33, 114, 180),
+              backgroundColor: Colors.green,
 
             child: CircleAvatar( 
                 radius: 60,
@@ -62,7 +63,7 @@ void _onChange() => setState(() {});
                   ? FileImage(File(contact.imagePath!))
                   : null,
               child: contact.imagePath == null
-                  ? const Icon(Icons.person, size: 60)
+                  ? const Icon(Icons.person, size: 60, color: Colors.grey)
                   : null,
             ),
             ),
