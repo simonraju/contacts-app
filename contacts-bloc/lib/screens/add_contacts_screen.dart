@@ -51,7 +51,7 @@ class _AddContactsScreenState extends State<AddContactsScreen> {
                radius: 64,
               backgroundColor: Color.fromARGB(255, 33, 114, 180),
              child:   CircleAvatar( radius: 60,
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.white,
               backgroundImage: _imageFile != null ? FileImage(_imageFile!) : null,
               child: _imageFile == null ? Icon(Icons.person, size: 60) : null,
             ),
